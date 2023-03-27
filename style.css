@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white-color: #fff;
+  --alt-white-color: #fbfaff;
+
+  --main-blue-color: #7c3aed;
+  --alt-blue-color: #cab3ff;
+
+  --main-text-color: #403937;
+  --alt-text-color: #756966;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "inter", sans-serif;
+  background-color: var(--main-color);
+}
