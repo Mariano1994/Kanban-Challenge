@@ -24,3 +24,45 @@ body {
   font-family: "inter", sans-serif;
   background-color: var(--main-color);
 }
+
+main {
+  display: grid;
+  grid-template-columns: 17.5rem 1fr;
+  grid-template-areas: "sidebar main-content";
+  background-color: var(--main-blue-color);
+  height: 100vh;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  margin-left: 3.5rem;
+  margin-top: 3.5rem;
+}
+
+.main-content {
+  grid-area: main-content;
+  height: 100vh;
+  background: var(--alt-white-color);
+  margin-top: 0.4rem;
+  border-radius: 3.2rem 0 0 0;
+  padding: 4.8rem 3.2rem;
+}
+
+.sidebar-items {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  cursor: pointer;
+  color: var(--alt-blue-color);
+}
+
+.item:first-child {
+  color: var(--alt-white-color);
+}
