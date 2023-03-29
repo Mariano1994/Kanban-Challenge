@@ -162,6 +162,7 @@ main {
   padding-top: 2.4rem;
   column-gap: 4.8rem;
   row-gap: 2.4rem;
+  margin-bottom: 2rem;
 }
 
 .cards-wrapper h2 {
