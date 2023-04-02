@@ -21,14 +21,16 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "inter", sans-serif;
+  font-family: 'inter', sans-serif;
   background-color: var(--main-color);
+  height: 100vh;
 }
 
 main {
+  position: relative;
   display: grid;
   grid-template-columns: 17.5rem 1fr;
-  grid-template-areas: "sidebar main-content";
+  grid-template-areas: 'sidebar main-content';
   background-color: var(--main-blue-color);
   height: 100vh;
 }
@@ -38,6 +40,8 @@ main {
   grid-area: sidebar;
   margin-left: 3.5rem;
   margin-top: 3.5rem;
+  height: 100vh;
+  background-color: var(--main-blue-color);
 }
 
 .sidebar-items {
@@ -67,7 +71,8 @@ main {
   margin-top: 0.4rem;
   border-radius: 3.2rem 0 0 0;
   padding: 4.8rem 3.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
+  height: 100vh;
 }
 
 /* Header / User-Avatar */
@@ -134,7 +139,6 @@ main {
   width: 100%;
   padding: 1.2rem 2.4rem;
   gap: 1rem;
-
   box-shadow: 0px 4px 16px rgba(22, 22, 22, 0.1);
   border: 0.7px solid #e3e3e3;
   border-radius: 8px;
@@ -165,10 +169,38 @@ main {
   row-gap: 2.4rem;
 }
 
-.cards-wrapper h2 {
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.title {
+  margin-bottom: 2.4rem;
+}
+
+.title h2 {
   font-size: 2rem;
   line-height: 26px;
   font-weight: 700;
+}
+
+.to-do button {
+  font-size: 1.8rem;
+  color: var(--main-blue-color);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #fff;
+  box-shadow: 0px 4px 16px rgba(22, 22, 22, 0.1);
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.to-do button:hover {
+  background-color: var(--main-blue-color);
+  color: #fff;
 }
 
 .card {
@@ -197,16 +229,43 @@ main {
   color: var(--alt-text-color);
 }
 
-.card .tiquet {
+.card .tag {
   display: flex;
   gap: 1rem;
   align-items: center;
   margin-top: 1rem;
 }
+
 .card span {
   padding: 4px 8px;
   border-radius: 8px;
   background-color: var(--alt-blue-color);
   color: var(--main-blue-color);
   font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgba(22, 22, 22, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.modal {
+  posistion: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 70%;
+
+  background-color: var(--alt-white-color);
 }
