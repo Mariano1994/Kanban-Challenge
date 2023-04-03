@@ -91,7 +91,7 @@
           <div class="to-do">
             <div class="title new-card">
               <h2>To do</h2>
-              <button>+</button>
+              <button id="new-card">+</button>
             </div>
 
             <!-- CARDS TO DO -->
@@ -222,12 +222,14 @@
         </div>
       </div>
 
-      <!-- Overlay works just fine -->
-      <div class="overlay"></div>
-      <div class="modal">
+      <!-- OVERLAY-->
+      <div class="overlay hidden"></div>
+
+      <!-- MODAL -->
+      <div class="modal hidden">
         <div class="modal-header">
           <h2>Add new card</h2>
-          <button>x</button>
+          <button class="close-modal">x</button>
         </div>
 
         <form action="">
@@ -237,6 +239,7 @@
             id="card-title"
             name="title"
             placeholder="Title Card"
+            required
           />
           <br />
 
@@ -246,6 +249,7 @@
             cols="25"
             rows="6"
             placeholder="Content Card"
+            required
           ></textarea>
           <br />
 
@@ -253,5 +257,7 @@
         </form>
       </div>
     </main>
+
+    <script src="/main.js"></script>
   </body>
 </html>
