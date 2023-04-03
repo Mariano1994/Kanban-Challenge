@@ -22,17 +22,14 @@ html {
 body {
   font-size: 1.6rem;
   font-family: 'inter', sans-serif;
-  background-color: var(--main-color);
-  height: 100vh;
+  background-color: var(--main-blue-color);
 }
 
 main {
-  position: relative;
   display: grid;
   grid-template-columns: 17.5rem 1fr;
   grid-template-areas: 'sidebar main-content';
-  background-color: var(--main-blue-color);
-  height: 100vh;
+  /* background-color: var(--main-blue-color); */
 }
 
 /* SIDE  BAR */
@@ -40,8 +37,6 @@ main {
   grid-area: sidebar;
   margin-left: 3.5rem;
   margin-top: 3.5rem;
-  height: 100vh;
-  background-color: var(--main-blue-color);
 }
 
 .sidebar-items {
@@ -59,20 +54,23 @@ main {
   color: var(--alt-blue-color);
 }
 
+.item:hover {
+  color: var(--alt-white-color);
+}
 .item:first-child {
   color: var(--alt-white-color);
 }
 
 /* MAIN CONTENT */
-.main-content {
+main .main-content {
   grid-area: main-content;
-  height: 100vh;
   background: var(--alt-white-color);
   margin-top: 0.4rem;
   border-radius: 3.2rem 0 0 0;
   padding: 4.8rem 3.2rem;
   margin-bottom: 5rem;
-  height: 100vh;
+  overflow: hidden;
+  height: 100%;
 }
 
 /* Header / User-Avatar */
@@ -165,14 +163,19 @@ main {
   grid-template-columns: repeat(3, 1fr);
   margin: 3.2rem;
   padding-top: 2.4rem;
+  padding-left: 1.5rem;
   column-gap: 4.8rem;
   row-gap: 2.4rem;
+  height: 100%;
+  overflow: scroll;
 }
 
 .card-wrapper {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  height: 483px;
+  oveflow: scroll;
 }
 
 .title {
