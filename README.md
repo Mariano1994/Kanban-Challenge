@@ -3,7 +3,7 @@
 ## Used Techonologies
 ### Html
 ### Css (With FlexBox and Grid)
-### JavaScript (Used to Open and Close Modal)
+### JavaScript 
 
 
 ## Desktop View
