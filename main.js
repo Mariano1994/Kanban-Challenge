@@ -35,7 +35,7 @@ addNewCardButton.addEventListener('click', function(e) {
   myCards.map(function(card){
     // Creating HTML Element
     cardHtml = `
-    <div class="card">
+    <div class="card" draggable="true">
       <strong> ${card.title} </strong>
       <p>
        ${card.description}
@@ -52,9 +52,8 @@ addNewCardButton.addEventListener('click', function(e) {
   entryCards.insertAdjacentHTML('afterbegin', cardHtml);
   
   // Invoke funtion to close the modal window
-  closeModal()
-
-   
+  closeModal();
+  dragAndDrop();
 
 })
 
@@ -71,6 +70,8 @@ cardDescription.value = '';
 // =============================
 
 //  Selecting all Elements
+
+
 const openModalButton = document.querySelector('#new-card');
 const closeModalButton = document.querySelector('.close-modal');
 const modalElement = document.querySelector('.modal');
@@ -104,3 +105,52 @@ document.addEventListener('keydown', function (event) {
     closeModal();
   }
 });
+
+
+// FUNCITON TO DRAG AND DROP
+function dragAndDrop() {
+
+  const cards = document.querySelectorAll('.card');
+  const dropZones = document.querySelectorAll('.card-wrapper');
+
+
+// Functions when dragging Cards 
+
+  const dragStart = function() {
+  dropZones.forEach(dropZone => dropZone.classList.add('highlight'));
+  this.classList.add('is-dragging');
+  };
+
+  const dragEnd = function() {
+  dropZones.forEach(dropZone => dropZone.classList.remove('highlight'));
+  this.classList.remove('is-dragging');
+ }
+
+ cards.forEach(card => {
+  card.addEventListener('dragstart', dragStart);
+  card.addEventListener('dragend', dragEnd);
+ })
+
+
+ // FUNCTION TO DROPZONES
+const dragOver = function() {
+
+  this.classList.add('over');
+
+
+  const cardBeingDragged = document.querySelector('.is-dragging');
+  this.appendChild(cardBeingDragged);
+ }
+
+const dragLeave = function() {
+  this.classList.remove('over');
+}
+
+ dropZones.forEach(dropZone => {
+  dropZone.addEventListener('dragover', dragOver);
+  dropZone.addEventListener('dragleave', dragLeave);
+ })
+
+}
+
+dragAndDrop();
