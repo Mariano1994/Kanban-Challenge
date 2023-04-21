@@ -1,3 +1,4 @@
+
 // Selection all elements to add new Card
 const addNewCardButton = document.querySelector('.add-card-button');
 const cardTitle = document.querySelector('.card-title');
@@ -5,8 +6,10 @@ const cardDescription = document.querySelector('.card-description');
 const entryCards = document.querySelector('.input');
 
 
-// CARD CONSTRUCTOR
+
 const myCards = []
+
+// CARD CONSTRUCTOR
 const Card = function(title, description) {
   this.title = title;
   this.description = description;
@@ -27,13 +30,13 @@ addNewCardButton.addEventListener('click', function(e) {
 
   const newCard = createNewCard(cardTitle.value, cardDescription.value);
   myCards.push(newCard);
- 
+  let cardHtml = '';
   
   myCards.map(function(card){
     // Creating HTML Element
-    const cardHtml = `
+    cardHtml = `
     <div class="card">
-      <strong> #${card.title} 🧑🏾‍💻</strong>
+      <strong> ${card.title} </strong>
       <p>
        ${card.description}
      </p>
@@ -42,13 +45,16 @@ addNewCardButton.addEventListener('click', function(e) {
       <span>challenge</span>
      </div>
    </div>`
-  
-  // Attach the html element to the cards grid
-  entryCards.insertAdjacentHTML('afterbegin', cardHtml);
+ 
   });
 
+  // Attach the html element to the cards grid
+  entryCards.insertAdjacentHTML('afterbegin', cardHtml);
+  
   // Invoke funtion to close the modal window
   closeModal()
+
+   
 
 })
 
